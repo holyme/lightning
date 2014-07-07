@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+     <html>
+     <head>
+         <meta charset="utf-8">
+         <title>$title</title>
+         <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+         <meta name="format-detection" content="telephone=no;address=no;email=no" />
+         <meta name="handheldFriendly" content="true" />
+         <meta name="apple-mobile-web-app-capable" content="yes" />
+         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+         <meta name="apple-touch-fullscreen" content="yes" />
+
+         <!-- style -->
+         <link rel="stylesheet" href="http://style.aliunicorn.com/mobile/css/1v/run/sc/common/layout/layout.css" />
+         <style>
+               body{ background: #fff; margin:0;}
+               #wrap{ position: relative; }
+               #wrap img{ width:100%; }
+               #svg-mask{ position: absolute; top:0; }
+         </style>
+     </head>
+
+     <?php echo('<'.'b'.'o'.'d'.'y'.'>'); ?>
+          <header>
+             <div class="header">
+                 <a id="logo" href="http://m.alibaba.com/" data-spm-anchor-id="0.0.0.0"></a>
+                 <a id="btn-ma" href="http://m.alibaba.com/ma"></a>
+             </div>
+          </header>
+
+          <section>
+               <div id="wrap">
+                    <img src="$bgImage" />
+
+                    <svg id="svg-mask">
+                        $svnCode
+                    </svg> 
+               </div>
+          <section>
+
+          <footer>
+              <div class="action-bar">
+                  <a id="btn-home" href="http://m.alibaba.com/" rel="nofollow">Home</a> |
+                  <a id="btn-sign-in" href="http://m.alibaba.com/login.html" rel="nofollow">Sign in</a> |
+                  <a id="btn-join" href="http://m.alibaba.com/register.html" rel="nofollow">Join free now!</a>
+              </div>
+              <div class="primary-link">
+                  <a id="btn-pcsite" href="http://www.alibaba.com:1080?from=wap&s=p" rel="nofollow">Desktop View</a>
+              </div>
+              <div class="sub-link">
+                  <a id="btn-pp" href="http://news.alibaba.com/article/detail/help/100453303-1-privacy-policy.html" rel="nofollow">Privacy Policy</a>
+                  <a id="btn-tu" href="http://news.alibaba.com/article/detail/help/100453293-1-terms-use.html" rel="nofollow">Terms of Use</a>
+                  <a id="btn-feedback" href="mailto:alibaba@email.alibaba.com?bcc=alibaba_mobile@service.alibaba.com&subject=My%20question%20from mobile%20site" rel="nofollow">Feedback</a>
+                  <a id="btn-app" href="http://m.alibaba.com/apps.do?ck=wapfoot" rel="nofollow">Download APP</a>
+              </div>
+              <div class="copy-right">Copyright Notice &copy; 1999 - 2014 Alibaba.com</div>
+          </footer>
+
+          <script>
+
+               var isInApp = ( window.navigator.userAgent.toLowerCase().indexOf('windvane') != -1 );
+
+                // if in app webview
+                if(isInApp){
+                    document.getElementsByTagName('header')[0].style.display = 'none';
+                    document.getElementsByTagName('footer')[0].style.display = 'none';
+                }
+                // other script
+
+               // For svg mask
+               (function(){
+                    var addListener = function(element,e,fn){ 
+                       if(element.addEventListener){ 
+                           element.addEventListener(e,fn,false); 
+                       } else { 
+                           element.attachEvent("on" + e,fn); 
+                       } 
+                    } 
+
+                    var autoScale = function(){
+                       var wrap = document.getElementById('wrap'),
+                           svgMask = document.getElementById('svg-mask'),
+                           svgKids = svgMask.childNodes,
+                           scaleRatio = wrap.offsetWidth / 640
+                           ;
+
+                       svgMask.setAttribute('height',wrap.offsetHeight);
+
+                       for(var i=0; i<svgKids.length; i++){
+                           var kid = svgKids[i];
+                           if (kid.nodeType != 1) continue;
+                           kid.setAttribute('transform','scale(' + scaleRatio + ')');
+                       }
+
+                       console.log('resize');
+
+                    }
+
+                    addListener(window, 'resize',function(){
+                       autoScale();
+                    });
+                    addListener(window, 'load',function(){
+                       autoScale();
+                    });
+               })();
+          </script>
+     <?php echo('<'.'/'.'b'.'o'.'d'.'y'.'>'); ?>
+</html>
+

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <title>♧ Lightning</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+
+<body>
+
+
+
+	<div id="wrap">
+
+		<h1><span class="logo">♧</span> Lightning <sup class="tip">快速页面生成解决方案</sup></h1>
+
+		<div id="menu">
+			<!--
+			<a id="upload-image" href="http://tps.tms.taobao.com/daogou/photo/index.htm" class="btn btn-info" target="_blank">上传视觉稿</a>
+			-->
+			
+			<div class="title-tip">页面标题:</div>
+			<input id="page-title" value="Wonderful Page" />
+			<button id="add-rect" type="button" class="btn btn-info" disabled >加入热点</button>
+			<button id="preview-page" type="button" class="btn btn-info" disabled >预览页面</button>
+			<button id="get-code" type="button" class="btn btn-info" disabled >获取HTML代码</button>
+
+			<div id="copyed-tip" class="tip">♨ 代码已复制到剪切板</div>
+			<hr />
+			<div id="copyright" class="tip">Lightning v0.10b © 2014 Holyme</div>
+		</div>
+
+
+		<img id="measure-image-box" src="./image/blank.gif" />
+
+		<div id="welcome">
+			<button id="fill-bg" type="button" class="btn btn-info">导入视觉稿</button>
+			<div class="tip">
+				<ul>「小提示」
+					<li>- 建议视觉稿宽度为640px。</li>
+					<li>- 建议视觉稿格式为PNG-8。</li>
+					<li>- 使用退格或DEL键可以删除选中元素。</li>
+					<li>&nbsp;</li>
+					<li>-- [ 下一版本 TODO ] --</li>
+					<li>- 链接支持普通HTTP链接以及APP协议。</li>
+					<li>- 支持数组导入图片。</li>
+					<li>- 自由划分图片组成(JPG/PNG区)，自动切图。</li>
+					<li>- 对接TMS接口 - upload & publish。</li>
+				</ul>
+			</div>
+		</div>
+
+		<canvas id="canvas" width="640" height="320"></canvas>
+
+
+
+
+	</div>
+
+	<script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/fabric.min.js"></script>
+    <script src="js/jquery.zclip.min.js"></script>
+    <script src="js/design.js"></script>
+
+</body>
+</html>
