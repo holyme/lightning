@@ -11,7 +11,6 @@
          <meta name="apple-touch-fullscreen" content="yes" />
 
          <!-- style -->
-         <link rel="stylesheet" href="http://style.aliunicorn.com/mobile/css/1v/run/sc/common/layout/layout.css" />
          <style>
                body{ background: #fff; margin:0;}
                #wrap{ position: relative; }
@@ -20,12 +19,10 @@
          </style>
      </head>
 
-     <?php echo('<'.'b'.'o'.'d'.'y'.'>'); ?>
+     <body>
+
           <header>
-             <div class="header">
-                 <a id="logo" href="http://m.alibaba.com/" data-spm-anchor-id="0.0.0.0"></a>
-                 <a id="btn-ma" href="http://m.alibaba.com/ma"></a>
-             </div>
+              <h1><span class="logo">♧</span> Hello, I'm New Tpl!</h1>
           </header>
 
           <section>
@@ -39,28 +36,14 @@
           <section>
 
           <footer>
-              <div class="action-bar">
-                  <a id="btn-home" href="http://m.alibaba.com/" rel="nofollow">Home</a> |
-                  <a id="btn-sign-in" href="http://m.alibaba.com/login.html" rel="nofollow">Sign in</a> |
-                  <a id="btn-join" href="http://m.alibaba.com/register.html" rel="nofollow">Join free now!</a>
-              </div>
-              <div class="primary-link">
-                  <a id="btn-pcsite" href="http://www.alibaba.com:1080?from=wap&s=p" rel="nofollow">Desktop View</a>
-              </div>
-              <div class="sub-link">
-                  <a id="btn-pp" href="http://news.alibaba.com/article/detail/help/100453303-1-privacy-policy.html" rel="nofollow">Privacy Policy</a>
-                  <a id="btn-tu" href="http://news.alibaba.com/article/detail/help/100453293-1-terms-use.html" rel="nofollow">Terms of Use</a>
-                  <a id="btn-feedback" href="mailto:alibaba@email.alibaba.com?bcc=alibaba_mobile@service.alibaba.com&subject=My%20question%20from mobile%20site" rel="nofollow">Feedback</a>
-                  <a id="btn-app" href="http://m.alibaba.com/apps.do?ck=wapfoot" rel="nofollow">Download APP</a>
-              </div>
-              <div class="copy-right">Copyright Notice &copy; 1999 - 2014 Alibaba.com</div>
+              <div class="copy-right"><a href="https://github.com/holyme/lightning">Lightning</a> © 2014 <a href="https://github.com/holyme">Holyme</a>e</div>
           </footer>
 
           <script>
                (function(){
 
                    // if in app webview
-                   var isInApp = ( window.navigator.userAgent.toLowerCase().indexOf('windvane') != -1 );
+                   var isInApp = ( window.navigator.userAgent.toLowerCase().indexOf('your_own_app_agent_string') != -1 );
                    if(isInApp){
                        document.getElementsByTagName('header')[0].style.display = 'none';
                        document.getElementsByTagName('footer')[0].style.display = 'none';
@@ -68,7 +51,7 @@
                        var svgLinks = document.getElementById('svg-mask').getElementsByTagName('a');
                        for(var i=0; i<svgLinks.length;i++){
                            var svgLink = svgLinks[i],
-                                   appLink = svgLink.getAttribute('applink');
+                               appLink = svgLink.getAttribute('applink');
                            ;
 
                            if(appLink){
@@ -90,7 +73,7 @@
                        var wrap = document.getElementById('wrap'),
                            svgMask = document.getElementById('svg-mask'),
                            svgKids = svgMask.childNodes,
-                           scaleRatio = wrap.offsetWidth / 640
+                           scaleRatio = wrap.offsetWidth / $bgWidth
                            ;
 
                        svgMask.setAttribute('height',wrap.offsetHeight);
@@ -112,5 +95,5 @@
 
                })();
           </script>
-     <?php echo('<'.'/'.'b'.'o'.'d'.'y'.'>'); ?>
+     </body>
 </html>
