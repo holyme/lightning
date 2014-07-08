@@ -57,25 +57,34 @@
           </footer>
 
           <script>
-
-               var isInApp = ( window.navigator.userAgent.toLowerCase().indexOf('windvane') != -1 );
-
-                // if in app webview
-                if(isInApp){
-                    document.getElementsByTagName('header')[0].style.display = 'none';
-                    document.getElementsByTagName('footer')[0].style.display = 'none';
-                }
-                // other script
-
-               // For svg mask
                (function(){
+
+                   // if in app webview
+                   var isInApp = ( window.navigator.userAgent.toLowerCase().indexOf('windvane') != -1 );
+                   if(!isInApp){
+                       var svgMask = document.getElementById('svg-mask');
+                       document.getElementsByTagName('header')[0].style.display = 'none';
+                       document.getElementsByTagName('footer')[0].style.display = 'none';
+                       var svgLinks = document.getElementById('svg-mask').getElementsByTagName('a');
+                       for(var i=0; i<svgLinks.length;i++){
+                           var svgLink = svgLinks[i],
+                                   appLink = svgLink.getAttribute('applink');
+                           ;
+
+                           if(appLink){
+                               svgLink.setAttribute('xlink:href',appLink);
+                           }
+                       }
+                   }
+
+
                     var addListener = function(element,e,fn){ 
                        if(element.addEventListener){ 
                            element.addEventListener(e,fn,false); 
                        } else { 
                            element.attachEvent("on" + e,fn); 
                        } 
-                    } 
+                    };
 
                     var autoScale = function(){
                        var wrap = document.getElementById('wrap'),
@@ -92,9 +101,7 @@
                            kid.setAttribute('transform','scale(' + scaleRatio + ')');
                        }
 
-                       console.log('resize');
-
-                    }
+                    };
 
                     addListener(window, 'resize',function(){
                        autoScale();
@@ -102,8 +109,8 @@
                     addListener(window, 'load',function(){
                        autoScale();
                     });
+
                })();
           </script>
      <?php echo('<'.'/'.'b'.'o'.'d'.'y'.'>'); ?>
 </html>
-

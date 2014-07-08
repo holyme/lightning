@@ -8,10 +8,10 @@ h1 sup{ font-weight: normal; }
 #welcome{ padding:20px; position:absolute; display:block; width:600px; height:220px; z-index: 1; }
 #menu{ height:285px; position: fixed; left:50%; margin-left:290px; top:72px; width:150px; }
 #menu button, #menu a, #menu input{ margin-bottom:8px; }
-#menu input{ height:24px; margin-top:8px; padding:0 5px; }
+#menu input, #menu select{ height:24px; margin-top:8px; padding:0 5px; }
+#tpl-selector{ margin-bottom:10px; }
 #measure-image-box{ position: absolute; left:-8000px; top:-8000px; z-index: 1; }
 #copyed-tip{ color:#4CB8D8; margin-top:5px; display: none; }
-
 #copyright{ font-size:9px; font-family: arail; width:200px; }
 
 .title-tip{ color:#309EBE; font-size:14px; }
