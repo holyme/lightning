@@ -16,4 +16,14 @@ Lightning — 快速页面生成解决方案。
 ![](https://raw.githubusercontent.com/holyme/lightning/master/_show/show-1.png)
 ![](https://raw.githubusercontent.com/holyme/lightning/f18ca2b6e295caeb2694cc0afbc4eb6a483af503/_show/show-2.png)
 
+安装说明：
+----
+1. 下载此git库中所有文件。
+2. 放置于本地的HTTP服务环境（否则跨域无法获取模板）。
+3. 访问站点根目录下的 design.html。
 
+
+二次开发:
+----
+
+1. 模板存放于，请参照default.html定制，注意所有模板变量($...)
