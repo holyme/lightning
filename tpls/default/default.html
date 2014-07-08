@@ -44,10 +44,10 @@
 
                    // if in app webview
                    var isInApp = ( window.navigator.userAgent.toLowerCase().indexOf('your_own_app_agent_string') != -1 );
-                   if(!isInApp){
-                       var svgMask = document.getElementById('svg-mask');
+                   if(isInApp){
                        document.getElementsByTagName('header')[0].style.display = 'none';
                        document.getElementsByTagName('footer')[0].style.display = 'none';
+                       var svgMask = document.getElementById('svg-mask');
                        var svgLinks = document.getElementById('svg-mask').getElementsByTagName('a');
                        for(var i=0; i<svgLinks.length;i++){
                            var svgLink = svgLinks[i],
