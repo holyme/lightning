@@ -6,7 +6,7 @@ h1 sup{ font-weight: normal; }
 #wrap{ width:800px; margin:0 auto; position: relative; }
 #canvas,#welcome{ margin:20px 0; display: none; -webkit-user-select: none; border:15px solid #e0e0e0; padding:2px;-moz-box-shadow:0 0 10px #06c;-webkit-box-shadow:0 0 10px #06c;box-shadow:0 0 10px #06c;}
 #welcome{ padding:20px; position:absolute; display:block; width:600px; height:220px; z-index: 1; }
-#menu{ height:285px; position: fixed; left:50%; margin-left:290px; top:72px; width:150px; }
+#menu{ height:285px; position: fixed; left:50%; margin-left:280px; top:72px; width:150px; z-index:9; background-color:#fff; padding:10px; }
 #menu button, #menu a, #menu input{ margin-bottom:8px; }
 #menu input, #menu select{ height:24px; margin-top:8px; padding:0 5px; }
 #tpl-selector{ margin-bottom:10px; }

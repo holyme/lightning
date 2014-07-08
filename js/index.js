@@ -54,9 +54,9 @@
         var svgCodeArray = [];
 
         var objs = canvas.getObjects().map(function(obj) {
-            var codeString = '	<a xlink:href="'+obj.link+'">\n	' + obj.toSVG() + '\n	</a>';
+            var codeString = '  <a xlink:href="'+obj.link+'">\n ' + obj.toSVG() + '\n   </a>';
             if(obj.httpLink){
-                var codeString = '	<a xlink:href="'+obj.httpLink+'" httplink="'+obj.httpLink+'" applink="'+obj.appLink+'">\n	' + obj.toSVG() + '\n	</a>';
+                var codeString = '  <a xlink:href="'+obj.httpLink+'" httplink="'+obj.httpLink+'" applink="'+obj.appLink+'">\n   ' + obj.toSVG() + '\n   </a>';
             }
 
             svgCodeArray.push( codeString );
@@ -84,7 +84,7 @@
 
     // background
     $('#fill-bg').click(function(){
-        var bg = window.prompt('请填入图片URL(HTTP/本地)','image/design-image.png');
+        var bg = window.prompt('请填入图片URL(HTTP)','https://raw.githubusercontent.com/holyme/lightning/master/image/design-image.png');
         if(!bg)return;
 
         // measure image size
