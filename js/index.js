@@ -70,6 +70,7 @@
         // parse tpl
         var code = tpl;
 
+        code = code.replace(/\$backgroundColor/g,$('#page-background-color').val());
         code = code.replace(/\$bgImage/g,info.bg);
         code = code.replace(/\$bgWidth/g,info.bgWidth);
         code = code.replace(/\$title/g,pageTitle);
@@ -231,6 +232,15 @@
 
             return pageCode;
         }
+    });
+
+
+    canvas.addEventListener('click',function(){
+        var point = [arguments[0].clientX - canvas.offsetLeft, arguments[0].clientY - canvas.offsetTop, 1 , 1];
+        var pix = this.getContext("2d").getImageData.apply(ctx,point);
+        var value = "rgba:("+pix.data[0]+","+pix.data[1]+","+pix.data[2]+","+pix.data[3]+")\n" +
+                    "#"+pix.data[0].toString(16)+pix.data[1].toString(16)+pix.data[2].toString(16)
+        alert(value);
     });
 
 
