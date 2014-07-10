@@ -84,28 +84,38 @@
     // [events]
 
     // background
-    $('#fill-bg').click(function(){
-        var bg = window.prompt('请填入图片URL(HTTP)','https://raw.githubusercontent.com/holyme/lightning/master/image/design-image.png');
-        if(!bg)return;
 
-        // measure image size
-        $('#measure-image-box').attr('src',bg).load(function(){
-
-            canvas.setBackgroundImage(bg, canvas.renderAll.bind(canvas));
+    $('#measure-image-box').load(function(){
+            if( this.offsetWidth > 640 ){
+                alert('图片宽度超过限制，建议使用宽度小于640px的视觉稿。');
+                $('#welcome').fadeIn(500);
+                $('#add-rect').attr('disabled','disabled');
+                return false;
+            }
+            canvas.setBackgroundImage(this.src, canvas.renderAll.bind(canvas));
             canvas.setWidth( this.offsetWidth );
             canvas.setHeight( this.offsetHeight );
             canvas.calcOffset();
             $('#canvas').fadeIn(500);
 
             // record
-            info.bg = bg;
             info.bgWidth = this.offsetWidth;
             info.bgHeight = this.offsetHeight;
-        })
+    });
+
+    $('#fill-bg').click(function(){
+        var bg = window.prompt('请填入图片URL(HTTP)','https://raw.githubusercontent.com/holyme/lightning/master/image/design-image.png');
+        if(!bg)return;
+
+        // record
+        info.bg = bg;
+
+        // measure image size
+        $('#measure-image-box').attr('src',bg + '?t=' + Date.parse(new Date()) );
 
         $('#add-rect').removeAttr('disabled');
         $('#welcome').hide();
-    })
+    });
 
 
     // tpl selector
