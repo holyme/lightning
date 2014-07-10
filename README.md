@@ -8,7 +8,7 @@ live demo：
 #### [http://holyme.github.io/lightning/](http://holyme.github.io/lightning/)
 
 
-特性：
+介绍：
 ----
 - 简单、快速、免费。
 - 你仅需要关注一张视觉图片。
@@ -19,8 +19,9 @@ live demo：
 - 可定制模板进行二次开发。
 - 生成代码可独立执行，可随意放置。
 - 支持终端容器判断，同一点击热区可支持HTTP链接或APP URLSchema。
+- 支持自定义背景色。
 
-界面:
+使用方法动态演示:
 ----
 ![demo it](https://raw.githubusercontent.com/holyme/lightning/master/_show/demo.gif)
 
@@ -31,7 +32,7 @@ live demo：
 3. 访问站点根目录下的 index.html。
 
 
-二次开发:
+二次开发说明:
 ----
 
 1. 模板存放于 tpls 下。
