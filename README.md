@@ -3,6 +3,9 @@ Lightning — 快速热区页面制作(移动端)解决方案
 
 > 你是否被一大堆切图的重复劳动困恼？或是纠结如何快速生成一个手机页面么？或许你是时候尝尝Lightning了 :)
 
+LIVEDEMO：
+----
+[http://holyme.github.io/lightning/](http://holyme.github.io/lightning/)
 
 特性：
 ----
