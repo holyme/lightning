@@ -5,7 +5,7 @@ Lightning — 快速热区页面制作(移动端)解决方案
 
 live demo：
 ----
-#### [http://holyme.github.io/lightning/](http://holyme.github.io/lightning/)
+# [http://holyme.github.io/lightning/](http://holyme.github.io/lightning/)
 
 
 介绍：
