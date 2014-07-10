@@ -1,79 +1,72 @@
 <!DOCTYPE html>
-<html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <title>♧ Lightning</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+</head>
 
-  <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Lightning : 快速热区页面制作(移动端)解决方案" />
+<body>
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+	<div id="wrap">
 
-    <title>Lightning</title>
-  </head>
+		<h1><span class="logo">♧</span> Lightning <sup class="tip">快速页面生成解决方案</sup></h1>
 
-  <body>
+		<div id="menu">
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/holyme/lightning">View on GitHub</a>
+			<div class="title-tip">页面标题:</div>
+			<input id="page-title" value="Wonderful Page" />
+            <div class="title-tip">模板选择:</div>
+            <select id="tpl-selector">
+                <option value ="./tpls/default/default.html" selected>Default</option>
+                <option value ="./tpls/tms/tms.html">TMS</option>
+            </select>
+			<div class="title-tip">背景颜色:</div>
+			<input id="page-background-color" value="#FFFFFF" />
 
-          <h1 id="project_title">Lightning</h1>
-          <h2 id="project_tagline">快速热区页面制作(移动端)解决方案</h2>
+            <!-- <a href="http://tps.tms.taobao.com/daogou/photo/index.htm" target="_blank" class="btn btn-info">上传视觉稿</a> -->
+            <button id="add-rect" type="button" class="btn btn-info" disabled="disabled" >加入热点</button>
+			<button id="preview-page" type="button" class="btn btn-info" disabled="disabled" >预览页面</button>
+			<button id="get-code" type="button" class="btn btn-info" disabled="disabled" >获取HTML代码</button>
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/holyme/lightning/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/holyme/lightning/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
+			<div id="copyed-tip" class="tip">♨ 代码已复制到剪切板</div>
+			<hr />
+			<div id="copyright" class="tip">
+				<a href="https://github.com/holyme/lightning">Lightning</a> v0.10b 
+				<br /><br />  
+				© 2014 <a href="https://github.com/holyme">Holyme</a>
+				<br /><br /> 
+				support : <a href="mailto:i@xunuo.com">snow</a>
+				<br /><br />
+				else post a <a href="https://github.com/holyme/lightning" target="_blank">issue</a>
+			</div>
+		</div>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+		<img id="measure-image-box" src="./image/blank.gif" />
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+		<div id="welcome">
+			<button id="fill-bg" type="button" class="btn btn-info">导入视觉稿</button>
+			<div class="tip">
+				<ul>「小提示」
+                    <li>- 使用方法：跟随蓝色按钮。</li>
+                    <li>- 页面标题及模板为可选项。</li>
+					<li>- 建议视觉稿宽度为640px。</li>
+					<li>- 建议视觉稿格式为PNG-8。</li>
+					<li>- 使用退格或DEL键可以删除选中热区。</li>
+					<li>- 预览中半透明蓝色区块在最终生成代码中为全透明。</li>
+                    <li>- 生成代码可独立执行，可随意放置。</li>
+				</ul>
+			</div>
+		</div>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+		<canvas id="canvas" width="640" height="320"></canvas>
+	</div>
 
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+	<script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/fabric.min.js"></script>
+    <script src="js/jquery.zclip.min.js"></script>
+    <script src="js/index.js"></script>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Lightning maintained by <a href="https://github.com/holyme">holyme</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
-    
-
-  </body>
+</body>
 </html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+     <html>
+     <head>
+         <meta charset="utf-8">
+         <title>$title</title>
+         <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+         <meta name="format-detection" content="telephone=no;address=no;email=no" />
+         <meta name="handheldFriendly" content="true" />
+         <meta name="apple-mobile-web-app-capable" content="yes" />
+         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+         <meta name="apple-touch-fullscreen" content="yes" />
+
+         <!-- style -->
+         <style>
+               body{ background: $backgroundColor; margin:0; -webkit-tap-highlight-color: rgba(0,0,0,0); }
+               section{ padding:0; }
+               #wrap{ position: relative; }
+               #wrap img{ width:100%; }
+               #svg-mask{ position: absolute; top:0; }
+         </style>
+     </head>
+
+     <body>
+
+          <header>
+              <h1><span class="logo">♧</span> Hello, I'm New Tpl!</h1>
+          </header>
+
+          <section>
+               <div id="wrap">
+                    <img src="$bgImage" />
+
+                    <svg id="svg-mask">
+                        $svnCode
+                    </svg> 
+               </div>
+          </section>
+
+          <footer>
+              <div class="copy-right"><a href="https://github.com/holyme/lightning">Lightning</a> © 2014 <a href="https://github.com/holyme">Holyme</a>e</div>
+          </footer>
+
+          <script>
+               (function(){
+
+                   // if in app webview
+                   var isInApp = ( window.navigator.userAgent.toLowerCase().indexOf('your_own_app_agent_string') != -1 );
+                   if(isInApp){
+                       document.getElementsByTagName('header')[0].style.display = 'none';
+                       document.getElementsByTagName('footer')[0].style.display = 'none';
+                       var svgMask = document.getElementById('svg-mask');
+                       var svgLinks = document.getElementById('svg-mask').getElementsByTagName('a');
+                       for(var i=0; i<svgLinks.length;i++){
+                           var svgLink = svgLinks[i],
+                               appLink = svgLink.getAttribute('applink');
+                           ;
+
+                           if(appLink){
+                               svgLink.setAttribute('xlink:href',appLink);
+                           }
+                       }
+                   }
+
+
+                    var addListener = function(element,e,fn){ 
+                       if(element.addEventListener){ 
+                           element.addEventListener(e,fn,false); 
+                       } else { 
+                           element.attachEvent("on" + e,fn); 
+                       } 
+                    };
+
+                    var autoScale = function(){
+                       var wrap = document.getElementById('wrap'),
+                           svgMask = document.getElementById('svg-mask'),
+                           svgKids = svgMask.childNodes,
+                           scaleRatio = wrap.offsetWidth / $bgWidth
+                           ;
+
+                       svgMask.setAttribute('height',wrap.offsetHeight);
+
+                       for(var i=0; i<svgKids.length; i++){
+                           var kid = svgKids[i];
+                           if (kid.nodeType != 1) continue;
+                           kid.setAttribute('transform','scale(' + scaleRatio + ')');
+                       }
+
+                    };
+
+                    addListener(window, 'resize',function(){
+                       autoScale();
+                    });
+                    addListener(window, 'load',function(){
+                       autoScale();
+                    });
+
+               })();
+          </script>
+     </body>
+</html>
