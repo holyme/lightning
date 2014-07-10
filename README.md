@@ -5,8 +5,11 @@ Lightning — 快速热区页面制作(移动端)解决方案
 
 live demo：
 ----
-# [http://holyme.github.io/lightning/](http://holyme.github.io/lightning/)
+### [http://holyme.github.io/lightning/](http://holyme.github.io/lightning/)
 
+使用方法动态演示:
+----
+![demo it](https://raw.githubusercontent.com/holyme/lightning/master/_show/demo.gif)
 
 介绍：
 ----
@@ -20,10 +23,6 @@ live demo：
 - 生成代码可独立执行，可随意放置。
 - 支持终端容器判断，同一点击热区可支持HTTP链接或APP URLSchema。
 - 支持自定义背景色。
-
-使用方法动态演示:
-----
-![demo it](https://raw.githubusercontent.com/holyme/lightning/master/_show/demo.gif)
 
 安装说明：
 ----
