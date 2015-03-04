@@ -153,7 +153,7 @@
         });
 
         var group = new fabric.Group([  rect, text ], {
-            top : 20,
+            top : window.scrollY + 20,
             left : 20,
             transparentCorners: false,
             borderColor: 'gray',
